@@ -5,6 +5,8 @@ import {dataSourceOptions} from "../db/data-source";
 import {ServeStaticModule} from "@nestjs/serve-static";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {UserModule} from "./users/user.module";
+import {IntroModule} from "./intro/intro.module";
+import {AboutModule} from "./about/about.module";
 
 @Module({
     imports: [TypeOrmModule.forRoot(dataSourceOptions),
@@ -13,6 +15,8 @@ import {UserModule} from "./users/user.module";
             serveRoot: '/public',
         }),
         UserModule,
+        IntroModule,
+        AboutModule
     ],
     controllers: [AppController],
     providers: [],
