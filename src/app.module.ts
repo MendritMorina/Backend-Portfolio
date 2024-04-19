@@ -9,6 +9,7 @@ import {IntroModule} from "./intro/intro.module";
 import {AboutModule} from "./about/about.module";
 import {ExperienceModule} from "./experiences/experience.module";
 import {ProjectModule} from "./projects/project.module";
+import {ContactModule} from "./contact/contact.module";
 
 @Module({
     imports: [TypeOrmModule.forRoot(dataSourceOptions),
@@ -20,7 +21,8 @@ import {ProjectModule} from "./projects/project.module";
         IntroModule,
         AboutModule,
         ExperienceModule,
-        ProjectModule
+        ProjectModule,
+        ContactModule
     ],
     controllers: [AppController],
     providers: [],
