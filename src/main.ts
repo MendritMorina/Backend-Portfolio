@@ -9,7 +9,7 @@ async function bootstrap() {
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
-    origin: ['http://localhost:2001', 'https://mendrit-morina.com']
+    origin: ['http://localhost:2001', process.env.URL]
   });
   await app.listen(3003);
 }
