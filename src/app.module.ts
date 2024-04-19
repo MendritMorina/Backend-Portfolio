@@ -8,6 +8,7 @@ import {UserModule} from "./users/user.module";
 import {IntroModule} from "./intro/intro.module";
 import {AboutModule} from "./about/about.module";
 import {ExperienceModule} from "./experiences/experience.module";
+import {ProjectModule} from "./projects/project.module";
 
 @Module({
     imports: [TypeOrmModule.forRoot(dataSourceOptions),
@@ -18,7 +19,8 @@ import {ExperienceModule} from "./experiences/experience.module";
         UserModule,
         IntroModule,
         AboutModule,
-        ExperienceModule
+        ExperienceModule,
+        ProjectModule
     ],
     controllers: [AppController],
     providers: [],
