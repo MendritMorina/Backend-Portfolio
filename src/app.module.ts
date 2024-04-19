@@ -7,6 +7,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
 import {UserModule} from "./users/user.module";
 import {IntroModule} from "./intro/intro.module";
 import {AboutModule} from "./about/about.module";
+import {ExperienceModule} from "./experiences/experience.module";
 
 @Module({
     imports: [TypeOrmModule.forRoot(dataSourceOptions),
@@ -16,7 +17,8 @@ import {AboutModule} from "./about/about.module";
         }),
         UserModule,
         IntroModule,
-        AboutModule
+        AboutModule,
+        ExperienceModule
     ],
     controllers: [AppController],
     providers: [],
