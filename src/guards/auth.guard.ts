@@ -24,8 +24,9 @@ export class AuthGuard implements CanActivate {
       throw new UnauthorizedException('Not authorized, no token');
     }
 
+    let decoded;
     try {
-      const decoded = jwt.verify(token, this.configService.get<string>('JWT_SECRET'));
+      decoded = jwt.verify(token, this.configService.get<string>('JWT_SECRET'));
       request.user = await this.userRepository.findOne({where: {id: decoded.userId}});
 
       return true;
