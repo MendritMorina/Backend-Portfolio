@@ -10,6 +10,7 @@ import {AboutModule} from "./about/about.module";
 import {ExperienceModule} from "./experiences/experience.module";
 import {ProjectModule} from "./projects/project.module";
 import {ContactModule} from "./contact/contact.module";
+import {ErrorLogModule} from "./errors/error.module";
 
 @Module({
     imports: [TypeOrmModule.forRoot(dataSourceOptions),
@@ -22,7 +23,8 @@ import {ContactModule} from "./contact/contact.module";
         AboutModule,
         ExperienceModule,
         ProjectModule,
-        ContactModule
+        ContactModule,
+        ErrorLogModule
     ],
     controllers: [AppController],
     providers: [],
