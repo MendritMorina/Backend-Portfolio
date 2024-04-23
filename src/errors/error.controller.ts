@@ -1,9 +1,10 @@
 import {
     Controller,
-    Get, HttpCode, HttpException, HttpStatus, Param, Query,
+    Get, HttpCode, HttpException, HttpStatus, Param, Query, UseGuards,
 } from '@nestjs/common';
 import {FilterErrorLogDto} from "./dtos/filter-error.dto";
 import {ErrorLogService} from "./error.service";
+import {AuthGuard} from "../guards/auth.guard";
 
 
 @Controller('errors')
@@ -12,9 +13,9 @@ export class ErrorLogController {
     }
 
     @Get()
+    @UseGuards(AuthGuard)
     @HttpCode(HttpStatus.OK)
     async find(@Query() filterErrorLogDto: FilterErrorLogDto) {
-        console.log(filterErrorLogDto);
         try {
             return await this.errorLogService.getErrors(filterErrorLogDto);
         } catch (err) {
