@@ -12,7 +12,7 @@ async function bootstrap() {
     origin: [process.env.REACT_APP_URL],
     credentials: true,
   });
-  await app.listen(3003);
+  await app.listen(process.env.PORT,'0.0.0.0');
 }
 
 bootstrap();
