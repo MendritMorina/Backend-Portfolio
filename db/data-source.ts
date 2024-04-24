@@ -25,3 +25,8 @@ export default dataSource;
 
 //npm run migration:generate -- db/migrations/create_user_table
 //npm run migration:run
+
+
+//Frontend - onrender.com
+//Database - console.aiven.io
+//Backend -  railway.app

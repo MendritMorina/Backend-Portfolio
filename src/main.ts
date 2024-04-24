@@ -9,10 +9,12 @@ async function bootstrap() {
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
-    origin: [process.env.REACT_APP_URL],
+    origin: process.env.REACT_APP_URL,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type, Accept',
     credentials: true,
   });
-  await app.listen(process.env.PORT,'0.0.0.0');
+  await app.listen(process.env.PORT || 3000,'0.0.0.0');
 }
 
 bootstrap();
